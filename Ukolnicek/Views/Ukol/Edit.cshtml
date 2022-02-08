@@ -1,0 +1,65 @@
+﻿@model Ukolnicek.Models.Ukol
+
+<form method="post">
+    <input asp-for="Id" hidden />
+    <div class="border p-3">
+
+        <div class="form-group row">
+            <h2 class="text-info pl-3">Nový úkol</h2>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <div class="form-group row">
+                    <div class="col-6">
+                        <label asp-for="NazevUkolu"></label>
+                    </div>
+                    <div class="col-6">
+                        <input asp-for="NazevUkolu" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-6">
+                        <label asp-for="DruhPrace"></label>
+                    </div>
+                    <div class="col-6">
+                        <div class="custom-select">
+                            <select>
+                                <option value="0">Druh práce:</option>
+                                <option value="1">Kódování</option>
+                                <option value="2">Programování</option>
+                                <option value="3">Meetingy</option>
+                                <option value="4">Školení</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-6">
+                        <label asp-for="CasDo"></label>
+                    </div>
+                    <div class="col-6">
+                        <input type="datetime-local" id="zacatek" name="zacatek">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-6">
+                        <label asp-for="CasOd"></label>
+                    </div>
+                    <div class="col-6">
+                        <input type="datetime-local" id="konec" name="konec">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-8 offset-4 row">
+                        <div class="col">
+                            <input type="submit" class="btn btn-info w-100" value="Update" />
+                        </div>
+                        <div class="col">
+                            <a asp-action="Index" class="btn btn-success w-100">Zpět</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
