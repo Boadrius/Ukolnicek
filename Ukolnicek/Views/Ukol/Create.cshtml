@@ -1,64 +1,53 @@
 ﻿@model Ukolnicek.Models.Ukol
 
 <form method="post" asp-action="Create">
-    <div class="border p-3">
-
-        <div class="form-group row">
-            <h2 class="text-info pl-3">Nový úkol</h2>
+    <div class="row pb-4">
+        <div class="col-12 text-center">
+            <h2 class="text-info pl-3 display-4">Nový úkol</h2>
+        </div>          
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <div class="form-group">
+                            <label asp-for="NazevUkolu"></label>
+                            <input asp-for="NazevUkolu" class="form-control" />
+                            <span asp-validation-for="NazevUkolu"></span>
+                        </div> 
         </div>
-        <div class="row">
-            <div class="col-8">
-                <div class="form-group row">
-                    <div class="col-6">
-                        <label asp-for="NazevUkolu"></label>
-                    </div>
-                    <div class="col-6">
-                        <input asp-for="NazevUkolu" class="form-control" />
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-6">
-                        <label asp-for="DruhPrace"></label>
-                    </div>
-                    <div class="col-6">
-                        <div class="custom-select">
-                            <select>
-                                <option value="0">Druh práce:</option>
-                                <option value="1">Kódování</option>
-                                <option value="2">Programování</option>
-                                <option value="3">Meetingy</option>
-                                <option value="4">Školení</option>
+        <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="DruhPrace"></label>
+                            <select class="form-select w-100" aria-label="Default select example" asp-for=DruhPrace style="height:38px;">
+                                <option value="Kódování">Kódování</option>
+                                <option value="Programování">Programování</option>
+                                <option value="Meetingy">Meetingy</option>
+                                <option value="Školení">Školení</option>
                             </select>
-                        </div>
+                            <span asp-validation-for="DruhPrace"></span>
+                        </div>                       
                     </div>
-                </div>
-                <div class="form-group row">
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-6">
+                        <div class="form-group">
+                            <label asp-for="CasDo"></label>
+                            <input asp-for="CasDo" class="form-control" />
+                            <span asp-validation-for="CasDo"></span>
+                        </div>                       
+                    </div>
+
                     <div class="col-6">
-                        <label asp-for="CasDo"></label>
-                    </div>
-                    <div class="col-6">
-                        <input asp-for="CasDo" type="datetime-local" id="zacatek" name="zacatek">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-6">
-                        <label asp-for="CasOd"></label>
-                    </div>
-                    <div class="col-6">                        
-                        <input asp-for="CasOd" type="datetime-local" id="konec" name="konec">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-8 offset-4 row">
-                        <div class="col">
-                            <input type="submit" class="btn btn-info w-100" value="Vytvořit" />
+                        <div class="form-group">
+                            <label asp-for="CasOd"></label>
+                            <input asp-for="CasOd" class="form-control" />
+                            <span asp-validation-for="CasOd"></span>
+                        </div> 
                         </div>
-                        <div class="col">
-                            <a asp-action="Index" class="btn btn-success w-100">Zpět</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    </div>
+    <div class="row pt-4">
+        <div class="col text-center">
+            <input type="submit" class="btn btn-success btn-lg" value="Vytvořit" />
+            <a asp-action="Index" class="btn btn-danger btn-lg">Zpět</a>
         </div>
     </div>
 </form>

@@ -1,6 +1,6 @@
 ﻿@model Ukolnicek.Models.Ukol
 
-<form method="post">
+<form method="post" asp-action="Edit">
     <input asp-for="Id" hidden />
     <div class="border p-3">
 
@@ -22,15 +22,13 @@
                         <label asp-for="DruhPrace"></label>
                     </div>
                     <div class="col-6">
-                        <div class="custom-select">
-                            <select>
+                        <select class="form-select" aria-label="Default select example" asp-for=DruhPrace>
                                 <option value="0">Druh práce:</option>
-                                <option value="1">Kódování</option>
-                                <option value="2">Programování</option>
-                                <option value="3">Meetingy</option>
-                                <option value="4">Školení</option>
-                            </select>
-                        </div>
+                                <option value="Kódování">Kódování</option>
+                                <option value="Programování">Programování</option>
+                                <option value="Meetingy">Meetingy</option>
+                                <option value="Školení">Školení</option>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -38,7 +36,7 @@
                         <label asp-for="CasDo"></label>
                     </div>
                     <div class="col-6">
-                        <input type="datetime-local" id="zacatek" name="zacatek">
+                        <input asp-for="CasDo">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -46,7 +44,7 @@
                         <label asp-for="CasOd"></label>
                     </div>
                     <div class="col-6">
-                        <input type="datetime-local" id="konec" name="konec">
+                        <input asp-for="CasOd">
                     </div>
                 </div>
                 <div class="form-group row">
